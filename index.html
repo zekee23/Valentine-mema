@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You ♡</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=VT323&family=IBM+Plex+Mono:wght@300;400;500&family=Crimson+Pro:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="noise"></div>
+    <div class="sparkles" id="sparkles"></div>
+
+    <!-- PART 2: ARCADE GAME -->
+    <div id="arcade-scene" class="scene active">
+        <div class="arcade-machine">
+            <div class="machine-top">
+                <div class="machine-title">LOVE CATCHER</div>
+            </div>
+
+            <div class="screen-frame">
+                <div class="screen">
+                    <div class="scanlines"></div>
+
+                    <!-- START SCREEN -->
+                    <div id="arcade-start-view" class="arcade-view active">
+                        <div class="game-logo">LOVE CATCHER</div>
+                        <div class="subtitle">Valentine's Special</div>
+                        <div class="prize-display">
+                            <div class="silhouette"></div>
+                            <div class="prize-badge">PRIZE</div>
+                        </div>
+                        <button class="start-btn" id="start-arcade-btn">START</button>
+                        <div class="game-info">CATCH 10 HEARTS!</div>
+                    </div>
+
+                    <!-- GAME SCREEN -->
+                    <div id="arcade-game-view" class="arcade-view">
+                        <div class="game-header">
+                            <div class="score-display">HEARTS: <span id="arcade-score">0</span>/10</div>
+                            <div class="instruction-small">USE ARROWS TO CATCH ♡</div>
+                        </div>
+                        <div class="game-area" id="game-area">
+                            <div class="catcher" id="catcher">
+                                <img src="catcher.png" alt="catcher" class="catcher-img">
+                            </div>
+                        </div>
+                        <div class="controls">
+                            <button class="arrow-btn" id="left-btn">◀</button>
+                            <button class="arrow-btn" id="right-btn">▶</button>
+                        </div>
+                    </div>
+
+                    <!-- ARCADE RESULT -->
+                    <div id="arcade-result-view" class="arcade-view">
+                        <div class="result-title">YOU WON!</div>
+                        <div class="result-message">
+                            you caught all my hearts...<br>
+                            now let's unlock our memories together
+                        </div>
+                        <button class="start-btn" id="continue-to-memory-btn">CONTINUE</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-panel">
+                <div class="button-arcade red"></div>
+                <div class="joystick">
+                    <div class="joystick-ball"></div>
+                    <div class="joystick-stick"></div>
+                    <div class="joystick-base"></div>
+                </div>
+                <div class="button-arcade yellow"></div>
+                <div class="button-arcade pink"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PART 3: MEMORY CARD GAME -->
+    <div id="memory-scene" class="scene">
+        <div class="memory-container">
+            <div class="memory-header">
+                <h2>Our Memories Together</h2>
+                <div class="progress-text">MEMORIES UNLOCKED: <span id="memory-progress">0</span>/6</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="memory-progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="memory-grid" id="memory-grid"></div>
+        </div>
+    </div>
+
+    <!-- MEMORY MODAL -->
+    <div class="memory-modal" id="memory-modal">
+        <div class="memory-modal-content">
+            <h3 id="modal-title"></h3>
+            <p id="modal-text"></p>
+            <button class="close-modal" id="close-modal-btn">continue</button>
+        </div>
+    </div>
+
+    <!-- PART 4: DATE SELECTION -->
+    <div id="date-scene" class="scene">
+        <div class="date-container">
+            <h2 class="date-title">Will you go out with me this February 14th?</h2>
+            <p class="date-subtitle">Choose where you'd like to celebrate Valentine's Day with me ♡</p>
+
+            <div class="date-options">
+                <div class="date-card" data-place="cafe">
+                    <h3>Kape date at kain date</h3>
+                    <p>basta mura lang at kasya sa budget ko HAHA</p>
+                </div>
+                
+                <div class="date-card" data-place="park">
+                    <h3>bahala na </h3>
+                    <p>kung saan mapunta basta kasama ka ^_^ </p>
+                </div>
+                
+                <div class="date-card" data-place="movies">
+                    <h3>Movie Night</h3>
+                    <p>tulog nalang ulit tayong magkasama sabay nuod movie</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FINAL MODAL -->
+    <div class="final-modal" id="final-modal">
+        <div class="final-modal-content">
+            <h2>Perfect! ♡</h2>
+            <p id="final-message"></p>
+            <div class="big-question">Will you be my Valentine?</div>
+            <div class="answer-buttons">
+                <button class="answer-btn yes" id="yes-btn">YES! ♡</button>
+                <button class="answer-btn no" id="no-btn">NO</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CELEBRATION -->
+    <div id="celebration">
+        <div class="celebration-content">
+            <h2>♡ YES! ♡</h2>
+            <p>I'M SO HAPPY! CAN'T WAIT FOR OUR DATE ♡</p>
+            <div class="celebration-hearts" id="celebration-hearts"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
